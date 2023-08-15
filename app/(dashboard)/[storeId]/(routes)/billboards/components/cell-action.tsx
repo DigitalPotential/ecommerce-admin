@@ -49,7 +49,12 @@ export const CellAction: React.FC<CellActionProps> = ({
 
     return (
         <>
-        <AlertModal />
+        <AlertModal
+            isOpen={open}
+            onClose={() => setOpen(false)}
+            onConfirm={onDelete}
+            loading={loading}
+        />
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="h-8 w-8 p-0">
@@ -69,7 +74,7 @@ export const CellAction: React.FC<CellActionProps> = ({
                     <Edit className="mr-2 h-4 w-4" />
                     Update
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => }>
+                <DropdownMenuItem onClick={() => setOpen(true)}>
                     <Trash className="mr-2 h-4 w-4" />
                     Delete
                 </DropdownMenuItem>
