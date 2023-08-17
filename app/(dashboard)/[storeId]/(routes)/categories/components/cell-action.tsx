@@ -1,7 +1,7 @@
 "use client";
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { BillboardColumn } from "./columns";
+import { CategoryColumn } from "./columns";
 import { Button } from "@/components/ui/button";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import { DropdownMenuLabel } from "@radix-ui/react-dropdown-menu";
@@ -12,7 +12,7 @@ import axios from "axios";
 import { AlertModal } from "@/components/modals/alert-modal";
 
 interface CellActionProps {
-    data: BillboardColumn;
+    data: CategoryColumn;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({
@@ -26,7 +26,7 @@ export const CellAction: React.FC<CellActionProps> = ({
 
     const onCopy = (id: string) => {
         navigator.clipboard.writeText(id)
-        toast.success("Billboard Id copied to the clipboard.")
+        toast.success("Category Id copied to the clipboard.")
     }
 
     const onDelete = async () => {
