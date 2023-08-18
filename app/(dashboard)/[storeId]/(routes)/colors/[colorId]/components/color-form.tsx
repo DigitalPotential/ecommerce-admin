@@ -149,11 +149,17 @@ export const ColorForm: React.FC<ColorFormProps> = ({
                                 <FormItem>
                                     <FormLabel>Value</FormLabel>
                                     <FormControl>
+                                        <div className="flex items-center gap-x-4">
                                         <Input
                                             disabled={loading}
                                             placeholder="Color value"
                                             {...field}
                                         />
+                                        <div
+                                            className="border p-4 rounder-full"
+                                            style={{ backgroundColor: field.value }}
+                                        />
+                                        </div>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
