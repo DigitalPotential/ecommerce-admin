@@ -156,7 +156,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({
                                             {...field}
                                         />
                                         <div
-                                            className="border p-4 rounder-full"
+                                            className="border p-4 rounded-full"
                                             style={{ backgroundColor: field.value }}
                                         />
                                         </div>
