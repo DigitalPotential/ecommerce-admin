@@ -91,7 +91,7 @@ model Product {
   colorId    String
   color      Color    @relation(fields: [colorId], references: [id])
   images     Image[]
-  orderitems OrderItem[]
+  orderItems OrderItem[]
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
@@ -116,7 +116,7 @@ model Order {
   id String @id @default(uuid())
   storeId String
   store Store @relation("StoreToOrder",fields: [storeId], references: [id])
-  orderitems OrderItem[]
+  orderItems OrderItem[]
   isPaid Boolean @default(false)
   phone String @default("")
   address String @default("")
